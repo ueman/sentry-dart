@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 import 'package:universal_platform/universal_platform.dart';
+import 'package:sentry_flutter_example/scaffold_with_ui_error.dart';
 
 // ATTENTION: Change the DSN below with your own to see the events in Sentry. Get one at sentry.io
 const String _exampleDsn =
@@ -62,6 +63,10 @@ class MainScaffold extends StatelessWidget {
             RaisedButton(
               child: const Text('Open another Scaffold'),
               onPressed: () => SecondaryScaffold.openSecondaryScaffold(context),
+            ),
+            RaisedButton(
+              child: const Text('Open Scaffold with UI error'),
+              onPressed: () => ScaffoldWithUiError.open(context),
             ),
             RaisedButton(
               child: const Text('Dart: try catch'),

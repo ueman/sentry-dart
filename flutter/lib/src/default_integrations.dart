@@ -18,14 +18,27 @@ class FlutterErrorIntegration extends Integration<SentryFlutterOptions> {
       options.logger(
           SentryLevel.debug, 'Capture from onError ${errorDetails.exception}');
 
+      final betterMessage = TextTreeRenderer(
+        wrapWidth: 100,
+        wrapWidthProperties: 100,
+        maxDescendentsTruncatableNode: 5,
+      )
+          .render(
+              errorDetails.toDiagnosticsNode(style: DiagnosticsTreeStyle.error))
+          .trimRight();
+
       // FlutterError doesn't crash the App.
-      final mechanism = Mechanism(type: 'FlutterError', handled: true);
+      final mechanism = Mechanism(
+        type: 'FlutterError',
+        handled: true,
+      );
       final throwableMechanism =
           ThrowableMechanism(mechanism, errorDetails.exception);
 
       final event = SentryEvent(
         throwable: throwableMechanism,
         level: SentryLevel.fatal,
+        culprit: betterMessage,
       );
 
       await hub.captureEvent(event, stackTrace: errorDetails.stack);
