@@ -5,8 +5,15 @@ class ScaffoldWithUiError extends StatelessWidget {
     return Navigator.push(
       context,
       MaterialPageRoute<void>(
-        settings:
-            const RouteSettings(name: 'SecondaryScaffold', arguments: 'foobar'),
+        settings: RouteSettings(
+          name: '$ScaffoldWithUiError',
+          arguments: <String, dynamic>{
+            'foo': 'bar',
+            'baz': <String, String>{
+              'foo': 'bar',
+            },
+          },
+        ),
         builder: (context) {
           return ScaffoldWithUiError();
         },
