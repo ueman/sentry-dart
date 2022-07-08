@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+### Features
+
+- Bump Cocoa SDK to v7.20.0 ([#2](https://github.com/ueman/sentry-dart/pull/2))
+  - [changelog](https://github.com/getsentry/sentry-cocoa/blob/master/CHANGELOG.md#7200)
+  - [diff](https://github.com/getsentry/sentry-cocoa/compare/7.19.0...7.20.0)
+
 ## 6.6.3
 
 ### Fixes
