@@ -224,6 +224,30 @@ void main() {
 
       await Sentry.close();
     });
+
+    test('adds OnErrorIntegration when option is set', () async {
+      SentryFlutterOptions? flutterOptions;
+      await SentryFlutter.init(
+        (options) {
+          flutterOptions = options;
+          options.dsn = fakeDsn;
+          options.enablePlatformDispatcherErrorHandler = true;
+        },
+        appRunner: appRunner,
+        packageLoader: loadTestPackage,
+        platformChecker: getPlatformChecker(
+          isWeb: true,
+          platform: MockPlatform.android(),
+        ),
+      );
+
+      await Sentry.close();
+
+      expect(
+        flutterOptions?.integrations.whereType<OnErrorIntegration>().length,
+        1,
+      );
+    });
   });
 
   group('initial values', () {

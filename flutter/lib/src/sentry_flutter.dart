@@ -6,6 +6,7 @@ import 'package:meta/meta.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:sentry/sentry.dart';
 import 'event_processor/android_platform_exception_event_processor.dart';
+import 'integrations/on_error_integration.dart';
 import 'native_scope_observer.dart';
 import 'sentry_native.dart';
 import 'sentry_native_channel.dart';
@@ -22,7 +23,8 @@ import 'version.dart';
 
 /// Configuration options callback
 typedef FlutterOptionsConfiguration = FutureOr<void> Function(
-    SentryFlutterOptions);
+  SentryFlutterOptions,
+);
 
 /// Sentry Flutter SDK main entry point
 mixin SentryFlutter {
@@ -66,6 +68,9 @@ mixin SentryFlutter {
       // ignore: invalid_use_of_internal_member
       options: flutterOptions,
     );
+    if (flutterOptions.enablePlatformDispatcherErrorHandler) {
+      flutterOptions.addIntegration(OnErrorIntegration());
+    }
   }
 
   static Future<void> _initDefaultValues(

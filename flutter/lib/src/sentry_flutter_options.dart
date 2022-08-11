@@ -177,6 +177,13 @@ class SentryFlutterOptions extends SentryOptions {
   /// [SentryFlutter.setAppStartEnd].
   bool autoAppStart = true;
 
+  /// Starting with Flutter 3.3.0, Flutter has a new error handler, namely
+  /// [PlatformDispatcher.onError](https://master-api.flutter.dev/flutter/dart-ui/PlatformDispatcher/onError.html).
+  /// This error handler replaces the need for using [runZonedGuarded](https://api.dart.dev/stable/stable/dart-async/runZonedGuarded.html).
+  ///
+  /// Setting this to true only has an effect on Flutter > 3.3.0.
+  bool enablePlatformDispatcherErrorHandler = false;
+
   /// By using this, you are disabling native [Breadcrumb] tracking and instead
   /// you are just tracking [Breadcrumb]s which result from events available
   /// in the current Flutter environment.
