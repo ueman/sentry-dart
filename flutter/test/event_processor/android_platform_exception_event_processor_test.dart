@@ -7,7 +7,7 @@ import 'package:package_info_plus/package_info_plus.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 import 'package:sentry_flutter/src/event_processor/android_platform_exception_event_processor.dart';
 
-import 'integrations/native_app_start_integration_test.dart';
+import '../integrations/native_app_start_integration_test.dart';
 
 void main() {
   late Fixture fixture;
@@ -39,6 +39,8 @@ void main() {
         "Unsupported value: '[Ljava.lang.StackTraceElement;@ba6feed' of type 'class [Ljava.lang.StackTraceElement;'",
       );
       expect(platformException.stackTrace!.frames.length, 18);
+      expect(platformException.stackTrace!.snapshot, true);
+      expect(platformException.stackTrace!.lang, 'java');
     });
 
     test(

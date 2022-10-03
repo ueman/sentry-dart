@@ -173,7 +173,8 @@ class _JvmExceptionFactory {
 
 extension on JvmException {
   MapEntry<SentryException, SentryThread> toSentryException(
-      String nativePackageName) {
+    String nativePackageName,
+  ) {
     String? exceptionType;
     String? module;
     final typeParts = type?.split('.');
@@ -194,6 +195,8 @@ extension on JvmException {
       module: module,
       stackTrace: SentryStackTrace(
         frames: stackFrames.reversed.toList(growable: false),
+        snapshot: true,
+        lang: 'java',
       ),
     );
 
