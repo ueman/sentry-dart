@@ -5,6 +5,7 @@
 ### Fixes
 
 - Bring protocol up to date with latest Sentry protocol ([#1038](https://github.com/getsentry/sentry-dart/pull/1038))
+- Set correct values for Android stacktraces reported via PlatformExceptions
 
 ### Features
 
