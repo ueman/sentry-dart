@@ -5,6 +5,9 @@
 ### Features
 
 - Added [Flutter renderer](https://docs.flutter.dev/development/platform-integration/web/renderers) information to events ([#1035](https://github.com/getsentry/sentry-dart/pull/1035))
+- Bump Cocoa SDK from v7.27.0 to v7.27.1 ([#20](https://github.com/ueman/sentry-dart/pull/20))
+  - [changelog](https://github.com/getsentry/sentry-cocoa/blob/master/CHANGELOG.md#7271)
+  - [diff](https://github.com/getsentry/sentry-cocoa/compare/7.27.0...7.27.1)
 
 ## 6.11.2
 
