@@ -5,6 +5,9 @@
 ### Features
 
 - Added [Flutter renderer](https://docs.flutter.dev/development/platform-integration/web/renderers) information to events ([#1035](https://github.com/getsentry/sentry-dart/pull/1035))
+- Bump Android SDK from v6.4.2 to v6.4.3 ([#19](https://github.com/ueman/sentry-dart/pull/19))
+  - [changelog](https://github.com/getsentry/sentry-java/blob/main/CHANGELOG.md#643)
+  - [diff](https://github.com/getsentry/sentry-java/compare/6.4.2...6.4.3)
 
 ## 6.11.2
 
