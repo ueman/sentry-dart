@@ -10,6 +10,12 @@
 
 - Bring protocol up to date with latest Sentry protocol ([#1038](https://github.com/getsentry/sentry-dart/pull/1038))
 
+### Dependencies
+
+- Bump Cocoa SDK from v7.27.1 to v7.29.0 ([#26](https://github.com/ueman/sentry-dart/pull/26))
+  - [changelog](https://github.com/getsentry/sentry-cocoa/blob/master/CHANGELOG.md#7290)
+  - [diff](https://github.com/getsentry/sentry-cocoa/compare/7.27.1...7.29.0)
+
 ## 6.12.2
 
 ### Fixes
