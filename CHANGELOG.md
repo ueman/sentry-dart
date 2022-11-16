@@ -8,9 +8,9 @@
 
 ### Dependencies
 
-- Bump Cocoa SDK from v7.30.2 to v7.31.0 ([#1132](https://github.com/getsentry/sentry-dart/pull/1132))
-  - [changelog](https://github.com/getsentry/sentry-cocoa/blob/master/CHANGELOG.md#7310)
-  - [diff](https://github.com/getsentry/sentry-cocoa/compare/7.30.2...7.31.0)
+- Bump Cocoa SDK from v7.30.2 to v7.31.1 ([#1132](https://github.com/getsentry/sentry-dart/pull/1132), [#36](https://github.com/ueman/sentry-dart/pull/36))
+  - [changelog](https://github.com/getsentry/sentry-cocoa/blob/master/CHANGELOG.md#7311)
+  - [diff](https://github.com/getsentry/sentry-cocoa/compare/7.30.2...7.31.1)
 
 ## 6.15.1
 
